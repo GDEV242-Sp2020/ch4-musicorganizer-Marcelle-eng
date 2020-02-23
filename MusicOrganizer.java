@@ -150,15 +150,18 @@ public class MusicOrganizer
         playlist.add(tracks.get(1));
         playlist.add(tracks.get(2));
         playlist.add(tracks.get(3));
-       // System.out.println(playlist.size());
-       int index = randomTrack.nextInt(tracks.size());
-          for(Track track : playlist)
-        {
-          player.startPlaying(tracks.get(index).getFilename());
+        System.out.println(playlist.size());
+       int index = randomTrack.nextInt(playlist.size());
+        System.out.println(index);
+      //for(Track track : tracks) {
+          if(tracks.size() > 0) {
+        //System.out.println(playlist.get(index).getFilename());
+        player.startPlaying(playlist.get(index).getFilename());
+        playlist.remove(playlist.get(index));
        }
-       playlist.remove(tracks.get(0));
+      
     }
-   
+    
     /**
      * Stop the player.
      */
